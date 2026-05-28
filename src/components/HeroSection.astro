@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  tag?: string;
+  cta?: { label: string; href: string };
+  variant?: 'primary' | 'accent' | 'dark';
+}
+
+const {
+  title,
+  subtitle,
+  tag,
+  cta,
+  variant = 'primary',
+} = Astro.props;
+---
+
+<section class={`hero hero--${variant}`}>
+  <div class="container hero__inner">
+    {tag && <span class="tag hero__tag">{tag}</span>}
+    <h1 class="hero__title">{title}</h1>
+    {subtitle && <p class="hero__subtitle">{subtitle}</p>}
+    {cta && (
+      <a href={cta.href} class="btn btn--accent hero__cta">{cta.label}</a>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero--primary {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: #fff;
+  }
+
+  .hero--accent {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    color: #fff;
+  }
+
+  .hero--dark {
+    background: linear-gradient(135deg, #1a1008 0%, var(--color-navbar) 100%);
+    color: #fff;
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .hero__tag {
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  .hero__title {
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .hero__subtitle {
+    font-size: 1.15rem;
+    opacity: 0.88;
+    max-width: 580px;
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+  }
+
+  .hero__cta {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+  }
+</style>

@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+---
+
+<Layout title="50° Anniversario" description="Il 50° anniversario dei Fedelissimi di Zugliano: festeggiamenti, programma e momenti speciali.">
+
+  <HeroSection
+    title="50° Anniversario"
+    subtitle="Mezzo secolo di storia, passione e comunità. Festeggiamo insieme questo traguardo straordinario."
+    tag="Fedelissimi · Edizione Speciale"
+    variant="accent"
+  />
+
+  <section class="section">
+    <div class="container">
+      <nav class="sub-nav" aria-label="Sezioni Fedelissimi">
+        <a href="/fedelissimi">Panoramica</a>
+        <a href="/fedelissimi/storia">Storia</a>
+        <a href="/fedelissimi/50esimo" class="active">50° Anniversario</a>
+      </nav>
+
+      <div class="anniversary-intro">
+        <div>
+          <h2>Un traguardo da celebrare</h2>
+          <p>
+            Il 50° anniversario dei Fedelissimi è un momento di grande orgoglio per tutta la comunità di Zugliano.
+            Cinquant'anni di feste, incontri, tradizioni e lavoro volontario che hanno lasciato un segno indelebile
+            nella vita del paese.
+          </p>
+          <p>
+            [Aggiungere qui il testo dedicato al 50esimo: riflessioni, ringraziamenti, messaggi dei fondatori o dei soci storici.]
+          </p>
+        </div>
+
+        <div class="anniversary-badge">
+          <div class="badge-circle">
+            <span class="badge-number">50</span>
+            <span class="badge-years">anni</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Programma festeggiamenti</h2>
+        <p class="section-header__subtitle">[Date da aggiornare] — Zugliano, Pozzuolo del Friuli</p>
+      </div>
+
+      <div class="program">
+        <div class="program__day">
+          <div class="program__day-header">
+            <span class="program__day-label">Giorno 1</span>
+            <span class="program__day-date">[Data placeholder]</span>
+          </div>
+          <ul class="program__events">
+            <li class="program__event">
+              <span class="program__event-time">[Ora]</span>
+              <div>
+                <strong>[Titolo evento]</strong>
+                <p>[Descrizione breve]</p>
+              </div>
+            </li>
+            <li class="program__event">
+              <span class="program__event-time">[Ora]</span>
+              <div>
+                <strong>[Titolo evento]</strong>
+                <p>[Descrizione breve]</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="program__day">
+          <div class="program__day-header">
+            <span class="program__day-label">Giorno 2</span>
+            <span class="program__day-date">[Data placeholder]</span>
+          </div>
+          <ul class="program__events">
+            <li class="program__event">
+              <span class="program__event-time">[Ora]</span>
+              <div>
+                <strong>[Titolo evento]</strong>
+                <p>[Descrizione breve]</p>
+              </div>
+            </li>
+            <li class="program__event">
+              <span class="program__event-time">[Ora]</span>
+              <div>
+                <strong>[Titolo evento]</strong>
+                <p>[Descrizione breve]</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galleria del 50°</h2>
+        <p class="section-header__subtitle">I momenti speciali dei festeggiamenti.</p>
+      </div>
+      <div class="gallery">
+        <div class="placeholder-img">[Foto 50esimo 1]</div>
+        <div class="placeholder-img">[Foto 50esimo 2]</div>
+        <div class="placeholder-img">[Foto 50esimo 3]</div>
+        <div class="placeholder-img">[Foto 50esimo 4]</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .anniversary-intro {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .anniversary-intro h2 {
+    margin-bottom: 1rem;
+  }
+
+  .anniversary-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .badge-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+  }
+
+  .badge-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .badge-years {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* Program */
+  .program {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .program__day {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .program__day-header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .program__day-label {
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+  }
+
+  .program__day-date {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .program__events {
+    list-style: none;
+    padding: 0.5rem 0;
+  }
+
+  .program__event {
+    display: flex;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    align-items: flex-start;
+  }
+
+  .program__event:last-child {
+    border-bottom: none;
+  }
+
+  .program__event-time {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    white-space: nowrap;
+    min-width: 48px;
+    margin-top: 0.15rem;
+  }
+
+  .program__event strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-text);
+  }
+
+  .program__event p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .anniversary-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .anniversary-badge {
+      order: -1;
+    }
+
+    .program {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

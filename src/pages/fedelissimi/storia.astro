@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+---
+
+<Layout title="Storia dei Fedelissimi" description="La storia dell'associazione Fedelissimi di Zugliano, dalle origini a oggi.">
+
+  <HeroSection
+    title="La nostra storia"
+    subtitle="Dalle origini ai giorni nostri: il cammino dei Fedelissimi attraverso le generazioni."
+    tag="Fedelissimi"
+    variant="primary"
+  />
+
+  <section class="section">
+    <div class="container">
+      <nav class="sub-nav" aria-label="Sezioni Fedelissimi">
+        <a href="/fedelissimi">Panoramica</a>
+        <a href="/fedelissimi/storia" class="active">Storia</a>
+        <a href="/fedelissimi/50esimo">50° Anniversario</a>
+      </nav>
+
+      <div class="storia-layout">
+        <div class="storia-intro">
+          <h2>Le radici di un'associazione</h2>
+          <p>
+            L'associazione Fedelissimi nasce dall'iniziativa di un gruppo di persone di Zugliano che, accomunate
+            dall'amore per il proprio paese e dalla voglia di fare comunità, decisero di unire le forze per
+            organizzare eventi e iniziative a beneficio di tutti gli abitanti.
+          </p>
+          <p>
+            [Aggiungere qui il testo storico reale: anno di fondazione, fondatori, motivazioni iniziali, ecc.]
+          </p>
+        </div>
+
+        <div class="placeholder-img storia-img">
+          [Foto storica placeholder]
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Le tappe principali</h2>
+        <p class="section-header__subtitle">I momenti che hanno segnato la storia dell'associazione.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__year">[Anno fondazione]</div>
+          <h3 class="timeline__title">Fondazione dell'associazione</h3>
+          <p class="timeline__text">[Descrizione placeholder: chi furono i fondatori, quale fu il primo evento organizzato, come nacque il nome Fedelissimi.]</p>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__year">[Anno]</div>
+          <h3 class="timeline__title">La prima sagra</h3>
+          <p class="timeline__text">[Descrizione placeholder: quando e come nacque la tradizione della sagra estiva, quante persone parteciparono alla prima edizione.]</p>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__year">[Anno]</div>
+          <h3 class="timeline__title">Nasce il Mondo Volley</h3>
+          <p class="timeline__text">[Descrizione placeholder: origine del torneo di green volley, come è cresciuto nel tempo.]</p>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__year">[Anno]</div>
+          <h3 class="timeline__title">La Festa Bavarese</h3>
+          <p class="timeline__text">[Descrizione placeholder: quando è nata la tradizione della Festa Bavarese e come si è sviluppata.]</p>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__year">Oggi</div>
+          <h3 class="timeline__title">Oltre cinquant'anni di storia</h3>
+          <p class="timeline__text">[Descrizione placeholder: situazione attuale, numero soci, prospettive future.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galleria storica</h2>
+        <p class="section-header__subtitle">Foto e ricordi degli anni passati.</p>
+      </div>
+      <div class="gallery">
+        <div class="placeholder-img">[Foto storica 1]</div>
+        <div class="placeholder-img">[Foto storica 2]</div>
+        <div class="placeholder-img">[Foto storica 3]</div>
+        <div class="placeholder-img">[Foto storica 4]</div>
+        <div class="placeholder-img">[Foto storica 5]</div>
+        <div class="placeholder-img">[Foto storica 6]</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .storia-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .storia-intro h2 {
+    margin-bottom: 1rem;
+  }
+
+  .storia-img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .timeline__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+    font-family: var(--font-heading);
+  }
+
+  @media (max-width: 768px) {
+    .storia-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

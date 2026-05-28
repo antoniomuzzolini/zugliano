@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<Layout title="Festa Bavarese" description="La Festa Bavarese di Zugliano: birra artigianale, gastronomia e musica per chiudere l'anno in allegria.">
+
+  <HeroSection
+    title="Festa Bavarese"
+    subtitle="L'oktoberfest di Zugliano: boccali colmi, specialità gastronomiche e musica per chiudere la stagione in grande stile."
+    tag="Festa di Ottobre"
+    cta={{ label: "Scopri il programma", href: "#programma" }}
+    variant="accent"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="info-top">
+        <div>
+          <h2>L'autunno in festa</h2>
+          <p>
+            Ogni ottobre, Zugliano si veste di colori autunnali e si anima con la Festa Bavarese, un appuntamento
+            ormai fisso nel calendario degli eventi del paese. Organizzata dall'associazione Fedelissimi, la festa
+            porta in paese lo spirito dell'Oktoberfest: birra di qualità servita in grandi boccali, gastronomia
+            ispirata alla tradizione bavarese e musica dal vivo.
+          </p>
+          <p>
+            Un evento che negli anni ha richiamato appassionati di birra e buona cucina da tutta la provincia,
+            diventando un punto di riferimento per chi ama le feste autunnali in un'atmosfera conviviale e genuina.
+          </p>
+          <p>
+            [Aggiungere qui ulteriori dettagli: storia dell'evento, numeri delle edizioni precedenti, birre servite, gruppi musicali ospitati.]
+          </p>
+        </div>
+
+        <aside class="info-box">
+          <h3>Informazioni</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-list__icon">📅</span>
+              <span><strong>[Date]</strong> — ottobre [anno]</span>
+            </li>
+            <li>
+              <span class="info-list__icon">🕕</span>
+              <span>Apertura ore <strong>[ora]</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">📍</span>
+              <span>Area festeggiamenti di Zugliano<br/>Via [placeholder], Pozzuolo del Friuli</span>
+            </li>
+            <li>
+              <span class="info-list__icon">🎟️</span>
+              <span><strong>Ingresso libero</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">🅿️</span>
+              <span>Parcheggio disponibile [indicazioni placeholder]</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="programma">
+    <div class="container">
+      <div class="section-header">
+        <h2>Programma</h2>
+        <p class="section-header__subtitle">Le serate dell'edizione [anno].</p>
+      </div>
+
+      <div class="program-nights">
+        <div class="night-card">
+          <div class="night-card__header">
+            <span class="night-card__day">Venerdì</span>
+            <span class="night-card__date">[Data]</span>
+          </div>
+          <div class="night-card__body">
+            <ul>
+              <li><strong>[Ora]</strong> — Apertura stand birra e gastronomia</li>
+              <li><strong>[Ora]</strong> — [Musica / banda bavarese placeholder]</li>
+              <li><strong>[Ora]</strong> — [Evento serale placeholder]</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="night-card">
+          <div class="night-card__header">
+            <span class="night-card__day">Sabato</span>
+            <span class="night-card__date">[Data]</span>
+          </div>
+          <div class="night-card__body">
+            <ul>
+              <li><strong>[Ora]</strong> — Apertura stand birra e gastronomia</li>
+              <li><strong>[Ora]</strong> — [Musica / intrattenimento placeholder]</li>
+              <li><strong>[Ora]</strong> — [Gran serata danzante placeholder]</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="night-card">
+          <div class="night-card__header">
+            <span class="night-card__day">Domenica</span>
+            <span class="night-card__date">[Data]</span>
+          </div>
+          <div class="night-card__body">
+            <ul>
+              <li><strong>[Ora]</strong> — Apertura (pranzo)</li>
+              <li><strong>[Ora]</strong> — [Intrattenimento pomeriggio placeholder]</li>
+              <li><strong>[Ora]</strong> — Chiusura della festa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="birra-menu">
+        <div>
+          <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+            <h2>La birra</h2>
+            <p class="section-header__subtitle">Selezione di birre bavaresi e artigianali.</p>
+          </div>
+          <div class="cards-grid" style="margin-top: 0;">
+            <div class="card">
+              <div class="card__icon">🍺</div>
+              <h3 class="card__title">[Birra 1]</h3>
+              <p class="card__body">[Stile, grado alcolico, descrizione placeholder]</p>
+            </div>
+            <div class="card">
+              <div class="card__icon">🍻</div>
+              <h3 class="card__title">[Birra 2]</h3>
+              <p class="card__body">[Stile, grado alcolico, descrizione placeholder]</p>
+            </div>
+            <div class="card">
+              <div class="card__icon">🥨</div>
+              <h3 class="card__title">[Birra 3 / Analcolica]</h3>
+              <p class="card__body">[Stile, descrizione placeholder]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Il menu gastronomico</h2>
+        <p class="section-header__subtitle">Specialità ispirate alla tradizione bavarese preparate dai nostri volontari.</p>
+      </div>
+
+      <div class="food-menu">
+        <div class="food-category">
+          <h3>Antipasti & stuzzichini</h3>
+          <ul>
+            <li>[Antipasto bavarese placeholder]</li>
+            <li>[Würstel / specialità placeholder]</li>
+            <li>[Bretzel placeholder]</li>
+          </ul>
+        </div>
+        <div class="food-category">
+          <h3>Piatti principali</h3>
+          <ul>
+            <li>[Stinco / arrosto placeholder]</li>
+            <li>[Piatto tipico bavarese placeholder]</li>
+            <li>[Alternativa vegetariana placeholder]</li>
+          </ul>
+        </div>
+        <div class="food-category">
+          <h3>Contorni & dolci</h3>
+          <ul>
+            <li>[Contorno placeholder]</li>
+            <li>[Dolce bavarese placeholder]</li>
+            <li>[Dessert placeholder]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galleria</h2>
+        <p class="section-header__subtitle">I momenti più belli delle edizioni passate.</p>
+      </div>
+      <div class="gallery">
+        <div class="placeholder-img">[Foto festa 1]</div>
+        <div class="placeholder-img">[Foto festa 2]</div>
+        <div class="placeholder-img">[Foto birra / gastronomia]</div>
+        <div class="placeholder-img">[Foto musica / serata]</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .info-top {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .info-top h2 {
+    margin-bottom: 1rem;
+  }
+
+  .info-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .info-box h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .program-nights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .night-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .night-card__header {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .night-card__day {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .night-card__date {
+    font-size: 0.82rem;
+    opacity: 0.85;
+  }
+
+  .night-card__body {
+    padding: 1rem 1.1rem;
+  }
+
+  .night-card__body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .night-card__body li strong {
+    color: var(--color-accent);
+  }
+
+  .food-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .food-category h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .food-category ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .food-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .food-category li:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 900px) {
+    .info-top,
+    .program-nights,
+    .food-menu {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

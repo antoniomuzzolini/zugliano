@@ -1,0 +1,322 @@
+---
+import navConfig from '../config/nav.json';
+
+type NavChild = { label: string; href: string; enabled: boolean };
+type NavItem = { label: string; href: string; enabled: boolean; children?: NavChild[] };
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+
+const visibleItems = (navConfig.items as NavItem[]).filter(item => item.enabled);
+---
+
+<header class="navbar">
+  <div class="navbar__inner container">
+    <a href="/" class="navbar__brand">
+      <span class="navbar__brand-text">Zugliano</span>
+      <span class="navbar__brand-sub">Pozzuolo del Friuli</span>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="navbar__toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
+
+    <nav class="navbar__menu" id="nav-menu" role="navigation">
+      <ul class="navbar__list">
+        {visibleItems.map(item => {
+          const hasChildren = item.children && item.children.filter(c => c.enabled).length > 0;
+          const enabledChildren = hasChildren ? item.children!.filter(c => c.enabled) : [];
+          const active = isActive(item.href);
+
+          return (
+            <li class={`navbar__item${hasChildren ? ' navbar__item--dropdown' : ''}`}>
+              {hasChildren ? (
+                <>
+                  <button class={`navbar__link navbar__link--btn${active ? ' active' : ''}`}
+                          aria-haspopup="true" aria-expanded="false">
+                    {item.label}
+                    <svg class="navbar__chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true">
+                      <path d="M0 0l5 6 5-6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                  </button>
+                  <ul class="navbar__dropdown">
+                    <li>
+                      <a href={item.href} class={`navbar__dropdown-link${currentPath === item.href ? ' active' : ''}`}>
+                        Panoramica
+                      </a>
+                    </li>
+                    {enabledChildren.map(child => (
+                      <li>
+                        <a href={child.href} class={`navbar__dropdown-link${isActive(child.href) ? ' active' : ''}`}>
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <a href={item.href} class={`navbar__link${active ? ' active' : ''}`}>
+                  {item.label}
+                </a>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle')!;
+  const menu = document.getElementById('nav-menu')!;
+
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  // Dropdown items on mobile: click to expand
+  const dropdownBtns = document.querySelectorAll<HTMLButtonElement>('.navbar__link--btn');
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const li = btn.closest('.navbar__item--dropdown')!;
+      const open = li.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target as Node) && !toggle.contains(e.target as Node)) {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-navbar);
+    color: var(--color-navbar-text);
+    height: var(--nav-height);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+  }
+
+  .navbar__brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.15;
+    flex-shrink: 0;
+  }
+
+  .navbar__brand-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .navbar__brand-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b8a89a;
+  }
+
+  /* Desktop nav */
+  .navbar__menu {
+    margin-left: auto;
+  }
+
+  .navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+    align-items: center;
+  }
+
+  .navbar__item {
+    position: relative;
+  }
+
+  .navbar__link,
+  .navbar__link--btn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius);
+    color: #ddd5c8;
+    font-size: 0.92rem;
+    font-weight: 400;
+    font-family: var(--font-body);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar__link:hover,
+  .navbar__link--btn:hover,
+  .navbar__link.active,
+  .navbar__link--btn.active {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .navbar__chevron {
+    transition: transform 0.2s;
+  }
+
+  .navbar__item--dropdown:hover .navbar__chevron,
+  .navbar__item--dropdown.is-expanded .navbar__chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown */
+  .navbar__dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    min-width: 190px;
+    padding: 0.4rem 0;
+    z-index: 200;
+  }
+
+  .navbar__item--dropdown:hover .navbar__dropdown {
+    display: block;
+  }
+
+  .navbar__dropdown-link {
+    display: block;
+    padding: 0.55rem 1.1rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .navbar__dropdown-link:hover,
+  .navbar__dropdown-link.active {
+    background: var(--color-bg);
+    color: var(--color-primary);
+  }
+
+  /* Toggle hamburger */
+  .navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+  }
+
+  .navbar__toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ddd5c8;
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .navbar__toggle {
+      display: flex;
+    }
+
+    .navbar__menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--color-navbar);
+      padding: 1rem 1.25rem 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      max-height: calc(100vh - var(--nav-height));
+      overflow-y: auto;
+    }
+
+    .navbar__menu.is-open {
+      display: block;
+    }
+
+    .navbar__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .navbar__link,
+    .navbar__link--btn {
+      padding: 0.8rem 0.5rem;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .navbar__dropdown {
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      background: rgba(255,255,255,0.05);
+      border-radius: 0;
+      padding: 0;
+      display: none;
+    }
+
+    .navbar__item--dropdown.is-expanded .navbar__dropdown {
+      display: block;
+    }
+
+    .navbar__dropdown-link {
+      color: #b8a89a;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .navbar__dropdown-link:hover,
+    .navbar__dropdown-link.active {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+  }
+</style>

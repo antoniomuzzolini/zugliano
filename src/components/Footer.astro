@@ -1,0 +1,85 @@
+---
+import navConfig from '../config/nav.json';
+
+const year = new Date().getFullYear();
+const footerLinks = navConfig.items.filter(item => item.enabled && item.href !== '/');
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="footer__brand-name">Zugliano</span>
+      <span class="footer__brand-sub">Pozzuolo del Friuli (UD)</span>
+    </div>
+
+    {footerLinks.length > 0 && (
+      <nav class="footer__links" aria-label="Link footer">
+        {footerLinks.map(item => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    )}
+
+    <p class="footer__copy">&copy; {year} Zugliano. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-navbar);
+    color: #b8a89a;
+    padding: 2.5rem 0 1.5rem;
+    margin-top: auto;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .footer__brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .footer__brand-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: center;
+  }
+
+  .footer__links a {
+    color: #b8a89a;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer__links a:hover {
+    color: #fff;
+  }
+
+  .footer__copy {
+    font-size: 0.78rem;
+    color: #7a6b5e;
+    margin: 0;
+  }
+</style>

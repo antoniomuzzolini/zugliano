@@ -1,0 +1,17 @@
+{
+  "items": [
+    { "label": "Home", "href": "/", "enabled": false },
+    {
+      "label": "Fedelissimi",
+      "href": "/fedelissimi",
+      "enabled": false,
+      "children": [
+        { "label": "Storia", "href": "/fedelissimi/storia", "enabled": false },
+        { "label": "50° Anniversario", "href": "/fedelissimi/50esimo", "enabled": false }
+      ]
+    },
+    { "label": "R'Estate in Compagnia", "href": "/restate-in-compagnia", "enabled": false },
+    { "label": "Mondo Volley", "href": "/mondo-volley", "enabled": true },
+    { "label": "Festa Bavarese", "href": "/festa-bavarese", "enabled": false }
+  ]
+}

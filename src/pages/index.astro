@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import navConfig from '../config/nav.json';
+
+type NavItem = { label: string; href: string; enabled: boolean };
+const enabled = new Set((navConfig.items as NavItem[]).filter(i => i.enabled).map(i => i.href));
+---
+
+<Layout title="Home" description="Benvenuto a Zugliano, frazione di Pozzuolo del Friuli. Scopri la nostra comunità, le sagre e gli eventi del paese.">
+
+  <HeroSection
+    title="Benvenuti a Zugliano"
+    subtitle="Una piccola comunità nel cuore del Friuli, ricca di tradizioni, feste e spirito di appartenenza."
+    tag="Pozzuolo del Friuli"
+    variant="dark"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Vita nel paese</h2>
+        <p class="section-header__subtitle">Associazioni, sagre ed eventi che animano la nostra comunità durante tutto l'anno.</p>
+      </div>
+
+      <div class="cards-grid">
+        {enabled.has('/fedelissimi') && (
+          <a href="/fedelissimi" class="card card--link">
+            <div class="card__icon">🤝</div>
+            <h3 class="card__title">Fedelissimi</h3>
+            <p class="card__body">L'associazione che da oltre cinquant'anni organizza sagre ed eventi in paese, tenendo viva la tradizione e lo spirito comunitario.</p>
+            <span class="card__link">Scopri &rarr;</span>
+          </a>
+        )}
+
+        {enabled.has('/restate-in-compagnia') && (
+          <a href="/restate-in-compagnia" class="card card--link">
+            <div class="card__icon">☀️</div>
+            <h3 class="card__title">R'Estate in Compagnia</h3>
+            <p class="card__body">La sagra di luglio che riunisce tutto il paese: serate di musica, cucina tipica friulana e tanto divertimento per grandi e piccoli.</p>
+            <span class="card__link">Scopri &rarr;</span>
+          </a>
+        )}
+
+        {enabled.has('/mondo-volley') && (
+          <a href="/mondo-volley" class="card card--link">
+            <div class="card__icon">🏐</div>
+            <h3 class="card__title">Mondo Volley</h3>
+            <p class="card__body">Il torneo di green volley in erba che si svolge durante la sagra estiva. Un'occasione di sport e socialità aperta a tutti.</p>
+            <span class="card__link">Scopri &rarr;</span>
+          </a>
+        )}
+
+        {enabled.has('/festa-bavarese') && (
+          <a href="/festa-bavarese" class="card card--link">
+            <div class="card__icon">🍺</div>
+            <h3 class="card__title">Festa Bavarese</h3>
+            <p class="card__body">La festa di ottobre in stile bavarese: boccali di birra, musica dal vivo e gastronomia per chiudere l'anno in allegria.</p>
+            <span class="card__link">Scopri &rarr;</span>
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dove siamo</h2>
+        <p class="section-header__subtitle">Zugliano si trova nella pianura friulana, a pochi chilometri da Udine.</p>
+      </div>
+      <div class="placeholder-img" style="max-width: 800px; margin: 0 auto;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11082.768466625219!2d13.204347316063174!3d46.017337237410814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477bb581b65683ef%3A0xa46388922cff18a5!2s33050%20Zugliano%20UD!5e0!3m2!1sit!2sit!4v1779963032415!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .card--link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+</style>

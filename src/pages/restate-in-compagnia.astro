@@ -1,0 +1,283 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<Layout title="R'Estate in Compagnia" description="R'Estate in Compagnia: la sagra estiva di luglio a Zugliano, con cucina friulana, musica e divertimento per tutti.">
+
+  <HeroSection
+    title="R'Estate in Compagnia"
+    subtitle="La sagra estiva di Zugliano: musica, cucina tipica friulana e serate di puro divertimento sotto le stelle."
+    tag="Sagra di Luglio"
+    cta={{ label: "Programma completo", href: "#programma" }}
+    variant="primary"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="info-top">
+        <div class="info-top__text">
+          <h2>La sagra dell'estate</h2>
+          <p>
+            R'Estate in Compagnia è l'appuntamento estivo che ogni anno riunisce gli abitanti di Zugliano e i
+            visitatori dei paesi vicini. Una tradizione nata anni fa grazie all'associazione Fedelissimi, che
+            negli anni si è trasformata in uno degli eventi più attesi della stagione nella pianura friulana.
+          </p>
+          <p>
+            Gastronomia tipica, musica dal vivo, serate danzanti e il torneo di Mondo Volley: la sagra offre
+            intrattenimento per tutte le età, dai più piccoli ai nonni, dal venerdì sera alla domenica.
+          </p>
+          <p>
+            [Aggiungere qui ulteriori dettagli: storia della sagra, curiosità, numeri dell'edizione precedente.]
+          </p>
+        </div>
+
+        <aside class="info-box">
+          <h3>Informazioni</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-list__icon">📅</span>
+              <span><strong>[Date]</strong> — [mese] [anno]</span>
+            </li>
+            <li>
+              <span class="info-list__icon">🕕</span>
+              <span>A partire dalle <strong>[ora apertura]</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">📍</span>
+              <span>Area festeggiamenti di Zugliano<br/>Via [placeholder], Pozzuolo del Friuli</span>
+            </li>
+            <li>
+              <span class="info-list__icon">🎟️</span>
+              <span><strong>Ingresso libero</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">🅿️</span>
+              <span>Parcheggio disponibile [indicazioni placeholder]</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="programma">
+    <div class="container">
+      <div class="section-header">
+        <h2>Programma</h2>
+        <p class="section-header__subtitle">Le serate dell'edizione [anno].</p>
+      </div>
+
+      <div class="program-grid">
+        <div class="program-night">
+          <div class="program-night__header">
+            <span class="program-night__day">Venerdì</span>
+            <span class="program-night__date">[Data]</span>
+          </div>
+          <ul class="program-night__list">
+            <li><span>[Ora]</span> — [Apertura stand gastronomici]</li>
+            <li><span>[Ora]</span> — [Musica / intrattenimento placeholder]</li>
+            <li><span>[Ora]</span> — [Evento serale placeholder]</li>
+          </ul>
+        </div>
+
+        <div class="program-night">
+          <div class="program-night__header">
+            <span class="program-night__day">Sabato</span>
+            <span class="program-night__date">[Data]</span>
+          </div>
+          <ul class="program-night__list">
+            <li><span>[Ora]</span> — [Apertura stand gastronomici]</li>
+            <li><span>[Ora]</span> — [Torneo Mondo Volley]</li>
+            <li><span>[Ora]</span> — [Musica / serata danzante placeholder]</li>
+          </ul>
+        </div>
+
+        <div class="program-night">
+          <div class="program-night__header">
+            <span class="program-night__day">Domenica</span>
+            <span class="program-night__date">[Data]</span>
+          </div>
+          <ul class="program-night__list">
+            <li><span>[Ora]</span> — [Pranzo / apertura stand]</li>
+            <li><span>[Ora]</span> — [Evento pomeriggio placeholder]</li>
+            <li><span>[Ora]</span> — [Premiazioni / chiusura sagra]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>La gastronomia</h2>
+        <p class="section-header__subtitle">Piatti tipici della tradizione friulana preparati con cura dai volontari.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-category">
+          <h3>Primi</h3>
+          <ul>
+            <li>[Primo piatto placeholder]</li>
+            <li>[Primo piatto placeholder]</li>
+            <li>[Primo piatto placeholder]</li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h3>Secondi</h3>
+          <ul>
+            <li>[Secondo piatto placeholder]</li>
+            <li>[Secondo piatto placeholder]</li>
+            <li>[Secondo piatto placeholder]</li>
+          </ul>
+        </div>
+        <div class="menu-category">
+          <h3>Contorni e dolci</h3>
+          <ul>
+            <li>[Contorno placeholder]</li>
+            <li>[Dolce placeholder]</li>
+            <li>[Bevanda / vino placeholder]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dove siamo</h2>
+        <p class="section-header__subtitle">Area festeggiamenti di Zugliano, facilmente raggiungibile.</p>
+      </div>
+      <div class="placeholder-img" style="max-width: 800px; margin: 0 auto;">
+        [Mappa area sagra placeholder]
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .info-top {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .info-top__text h2 {
+    margin-bottom: 1rem;
+  }
+
+  .info-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .info-box h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .program-night {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .program-night__header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .program-night__day {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .program-night__date {
+    font-size: 0.82rem;
+    opacity: 0.82;
+  }
+
+  .program-night__list {
+    list-style: none;
+    padding: 0.75rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .program-night__list li {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  .program-night__list li span {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 0.82rem;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .menu-category h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+  }
+
+  .menu-category ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .menu-category li:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 900px) {
+    .info-top {
+      grid-template-columns: 1fr;
+    }
+
+    .program-grid,
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

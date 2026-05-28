@@ -1,0 +1,630 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<Layout title="Mondo Volley" description="Mondo Volley on the green – Edizione 2026: il torneo amatoriale di green volley in erba dell'11 luglio all'Area Sportiva di Zugliano.">
+
+  <HeroSection
+    title="Mondo Volley on the green"
+    subtitle="Il torneo amatoriale di green volley in erba torna all'Area Sportiva di Zugliano. Sport, divertimento e spirito di squadra per tutti."
+    tag="Edizione 2026 · 11 Luglio"
+    cta={{ label: "Come iscriversi", href: "#iscrizioni" }}
+    variant="primary"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="volley-intro">
+        <div class="volley-intro__text">
+          <h2>Il torneo</h2>
+          <p>
+            Mondo Volley è il torneo amatoriale di green volley in erba che anima la sagra estiva di Zugliano.
+            Un formato misto 3+3 pensato per essere inclusivo e divertente: dai giocatori più esperti a chi
+            vuole semplicemente passare una giornata all'aria aperta con amici e colleghi.
+          </p>
+          <p>
+            Il torneo si disputa su campi in erba naturale presso l'Area Sportiva di Zugliano.
+            La giornata prevede una fase a gironi seguita dall'eliminazione diretta, con almeno 4 partite
+            garantite per ogni squadra.
+          </p>
+          <p>
+            Nel rispetto dello spirito amatoriale della manifestazione, il regolamento segue le norme FIPAV
+            con alcune eccezioni: la gestione tecnica non perfetta è tollerata purché non comporti un
+            vantaggio evidente. L'importante è partecipare!
+          </p>
+
+          <div class="flyer-wrap">
+            <img
+              src="/images/mondovolley-flyer.jpg"
+              alt="Volantino Mondo Volley on the green – Edizione 2026"
+              class="flyer-img"
+            />
+          </div>
+        </div>
+
+        <aside class="info-box">
+          <h3>Informazioni torneo</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-list__icon">📅</span>
+              <span><strong>Sabato 11 Luglio 2026</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">⏰</span>
+              <span>Ritrovo squadre: <strong>09:30</strong><br/>Estrazione gironi: <strong>09:45</strong><br/>Inizio partite: <strong>10:00</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">📍</span>
+              <span>Area Sportiva di Zugliano<br/><em>campi in erba naturale</em></span>
+            </li>
+            <li>
+              <span class="info-list__icon">🏐</span>
+              <span>Formula: <strong>3+3 Misto</strong><br/><em>almeno 3 ragazze e 3 ragazzi in campo</em></span>
+            </li>
+            <li>
+              <span class="info-list__icon">👥</span>
+              <span>Min. in campo: <strong>5 giocatori</strong></span>
+            </li>
+            <li>
+              <span class="info-list__icon">🔞</span>
+              <span>Età minima: <strong>16 anni</strong><br/><em>i minorenni devono presentare autorizzazione firmata da un genitore</em></span>
+            </li>
+            <li>
+              <span class="info-list__icon">🌐</span>
+              <span><a href="mailto:mondovolley@zugliano.com">mondovolley@zugliano.com</a></span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cosa è incluso</h2>
+        <p class="section-header__subtitle">Una giornata completa di sport, musica e convivialità.</p>
+      </div>
+
+      <div class="cards-grid cards-grid--centered">
+        <div class="card card--centered">
+          <div class="card__icon">🏐</div>
+          <h3 class="card__title">Almeno 4 partite</h3>
+          <p class="card__body">Ogni squadra è garantita di giocare almeno 4 partite, tra fase a gironi ed eliminazione diretta.</p>
+        </div>
+        <div class="card card--centered">
+          <div class="card__icon">🍝</div>
+          <h3 class="card__title">Pranzo incluso</h3>
+          <p class="card__body">La quota di iscrizione comprende pasta, panino e acqua per tutti i partecipanti.</p>
+        </div>
+        <div class="card card--centered">
+          <div class="card__icon">🏆</div>
+          <h3 class="card__title">Premi e riconoscimenti</h3>
+          <p class="card__body">Premi speciali per le prime squadre classificate al torneo.</p>
+        </div>
+        <div class="card card--centered">
+          <div class="card__icon">🎵</div>
+          <h3 class="card__title">Musica live</h3>
+          <p class="card__body">Musica dal vivo per accompagnare tutta la giornata tra una partita e l'altra.</p>
+        </div>
+        <div class="card card--centered">
+          <div class="card__icon">🍺</div>
+          <h3 class="card__title">Coppa chiosco</h3>
+          <p class="card__body">Il chiosco è aperto tutto il giorno per rinfrescarsi e festeggiare con amici e compagni di squadra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Formula e regolamento</h2>
+        <p class="section-header__subtitle">Le regole principali del torneo in sintesi.</p>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-block">
+          <h3>Composizione della squadra</h3>
+          <p>
+            Il torneo si gioca in formula <strong>3+3 misto</strong>: in campo devono esserci sempre almeno
+            3 ragazze e 3 ragazzi. Ogni squadra deve avere un responsabile maggiorenne. Sono consentite
+            sostituzioni illimitate, mantenendo il corretto ordine di rotazione.
+          </p>
+          <p>
+            Una squadra che non riesce a schierare almeno 5 giocatori perderà la partita a tavolino.
+            Il ritardo superiore a 10 minuti rispetto all'orario ufficiale comporta la sconfitta a tavolino.
+          </p>
+        </div>
+
+        <div class="rule-block">
+          <h3>Formato delle partite</h3>
+          <p>
+            Le partite vengono disputate secondo il regolamento FIPAV con le eccezioni previste dal regolamento
+            del torneo. Altezza rete: <strong>circa 2,30 m</strong>. Abbigliamento libero.
+          </p>
+          <p>
+            Il formato prevede il <strong>meglio dei 3 set</strong> (21–21–15, senza vantaggi) oppure un set
+            unico, in base al numero di squadre e ai campi disponibili.
+          </p>
+        </div>
+
+        <div class="rule-block">
+          <h3>Punteggio fase a gironi</h3>
+          <ul class="score-list">
+            <li><span class="score-result score-result--win">Vittoria 2–0</span> <span class="score-pts">3 punti</span></li>
+            <li><span class="score-result score-result--win">Vittoria 2–1</span> <span class="score-pts">2 punti</span></li>
+            <li><span class="score-result score-result--loss">Sconfitta 1–2</span> <span class="score-pts">1 punto</span></li>
+            <li><span class="score-result score-result--loss">Sconfitta 0–2</span> <span class="score-pts">0 punti</span></li>
+          </ul>
+          <p class="rule-note">In caso di parità: scontro diretto → differenza set → differenza punti → sorteggio.</p>
+        </div>
+
+        <div class="rule-block">
+          <h3>Struttura del torneo</h3>
+          <p>
+            Il torneo prevede una <strong>fase a gironi</strong> seguita da una <strong>fase a eliminazione
+            diretta</strong>. La formula definitiva viene definita in base al numero di squadre iscritte.
+          </p>
+          <p>
+            In caso di maltempo o cause di forza maggiore, l'organizzazione potrà modificare la formula o
+            ridurre il numero di partite.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="iscrizioni">
+    <div class="container">
+      <div class="section-header">
+        <h2>Come iscriversi</h2>
+        <p class="section-header__subtitle">Segui questi passaggi per portare la tua squadra in campo.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div>
+            <h3>Forma la tua squadra</h3>
+            <p>
+              Riunisci la tua squadra in formula 3+3 misto: almeno 3 ragazze e 3 ragazzi.
+              Individua un responsabile maggiorenne con recapito telefonico e raccogli i nomi di tutti i partecipanti.
+              Età minima: 16 anni. I minorenni devono presentare autorizzazione firmata da un genitore.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <div>
+            <h3>Compila il modulo online</h3>
+            <p>
+              L'iscrizione avviene esclusivamente tramite il modulo online ufficiale disponibile su
+              <a href="mailto:mondovolley@zugliano.com">mondovolley@zugliano.com</a>.
+              Le iscrizioni vanno effettuate indicativamente entro 2 giorni prima del torneo
+              (la data precisa verrà comunicata all'apertura delle iscrizioni).
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <div>
+            <h3>Invia la documentazione e paga la quota</h3>
+            <p>
+              L'iscrizione si considera confermata solo dopo la ricezione di:
+              modulo compilato, ricevuta di pagamento e certificati medici dei giocatori.
+              La quota di iscrizione (comunicata all'apertura delle iscrizioni) include assicurazione,
+              pasta e panino e acqua.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">4</div>
+          <div>
+            <h3>Scendi in campo!</h3>
+            <p>
+              Presentati all'Area Sportiva di Zugliano entro le <strong>09:30</strong> del
+              <strong>11 Luglio 2026</strong>. L'estrazione dei gironi avviene alle 09:45,
+              le partite iniziano alle 10:00. Buona fortuna!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <p>Per informazioni e iscrizioni:</p>
+        <a href="mailto:mondovolley@zugliano.com" class="btn btn--primary">mondovolley@zugliano.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pagamento">
+    <div class="container">
+      <div class="section-header">
+        <h2>Come pagare la quota</h2>
+        <p class="section-header__subtitle">Scegli il metodo di pagamento che preferisci.</p>
+      </div>
+
+      <div class="payment-grid">
+
+        <div class="payment-card">
+          <div class="payment-card__header">
+            <span class="payment-card__icon">🏦</span>
+            <h3>Bonifico bancario</h3>
+          </div>
+          <div class="payment-card__body">
+            <dl class="iban-list">
+              <div class="iban-row">
+                <dt>Intestatario</dt>
+                <dd><!-- NOME INTESTATARIO --></dd>
+              </div>
+              <div class="iban-row">
+                <dt>IBAN</dt>
+                <dd class="iban-code"><!-- IT00 X000 0000 0000 0000 0000 000 --></dd>
+              </div>
+              <div class="iban-row">
+                <dt>Causale</dt>
+                <dd>Iscrizione Mondo Volley 2026 – [Nome squadra]</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-card__header">
+            <img src="/images/paypal.png" alt="PayPal" class="payment-card__logo" />
+            <h3>PayPal</h3>
+          </div>
+          <div class="payment-card__body payment-card__body--centered">
+            <p class="payment-note">Paga in modo rapido e sicuro con il tuo account PayPal o carta di credito.</p>
+            <!-- Sostituire href con il link PayPal.me o il bottone generato da PayPal Business -->
+            <a href="#" class="btn btn--paypal" aria-label="Paga con PayPal">
+              Paga con PayPal
+            </a>
+          </div>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-card__header">
+            <img src="/images/satispay-icona.png" alt="Satispay" class="payment-card__logo" />
+            <h3>Satispay</h3>
+          </div>
+          <div class="payment-card__body payment-card__body--centered">
+            <p class="payment-note">Inquadra il QR code con l'app Satispay oppure cerca il profilo dell'organizzazione.</p>
+            <!-- Sostituire con il QR code generato da Satispay Business -->
+            <div class="qr-placeholder">QR Code Satispay</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galleria</h2>
+        <p class="section-header__subtitle">I momenti più belli delle edizioni passate.</p>
+      </div>
+      <div class="gallery">
+        <div class="placeholder-img">[Foto partita 1]</div>
+        <div class="placeholder-img">[Foto partita 2]</div>
+        <div class="placeholder-img">[Foto premiazione]</div>
+        <div class="placeholder-img">[Foto squadre]</div>
+      </div>
+    </div>
+  </section> */}
+
+</Layout>
+
+<style>
+  .card--centered {
+    align-items: center;
+    text-align: center;
+  }
+
+  .volley-intro {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .volley-intro h2 {
+    margin-bottom: 1rem;
+  }
+
+  .flyer-wrap {
+    margin-top: 2rem;
+  }
+
+  .flyer-img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .info-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+  }
+
+  .info-box h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  /* Rules grid */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .rule-block {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .rule-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary-dark);
+  }
+
+  .rule-block p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+
+  .score-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .score-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+  }
+
+  .score-result {
+    font-weight: 700;
+  }
+
+  .score-result--win {
+    color: var(--color-primary-dark);
+  }
+
+  .score-result--loss {
+    color: var(--color-text-muted);
+  }
+
+  .score-pts {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .rule-note {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 720px;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .step__number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .contact-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-cta p {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .volley-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .info-box {
+      position: static;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  /* Payment section */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .payment-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .payment-card__header {
+    background: var(--color-primary-dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .payment-card__header h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .payment-card__icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .payment-card__logo {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .payment-card__body {
+    padding: 1.25rem;
+  }
+
+  .payment-card__body--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .payment-note {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .iban-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .iban-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .iban-row dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+  }
+
+  .iban-row dd {
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .iban-code {
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+
+  .btn--paypal {
+    background: #0070ba;
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn--paypal:hover {
+    background: #005ea6;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .qr-placeholder {
+    width: 160px;
+    height: 160px;
+    background: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+</style>

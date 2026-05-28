@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+---
+
+<Layout title="Fedelissimi" description="L'associazione Fedelissimi di Zugliano: storia, attività e il 50° anniversario.">
+
+  <HeroSection
+    title="I Fedelissimi"
+    subtitle="L'associazione che da oltre mezzo secolo custodisce le tradizioni e anima la vita di Zugliano."
+    tag="Associazione"
+    variant="primary"
+  />
+
+  <section class="section">
+    <div class="container">
+      <nav class="sub-nav" aria-label="Sezioni Fedelissimi">
+        <a href="/fedelissimi" class="active">Panoramica</a>
+        <a href="/fedelissimi/storia">Storia</a>
+        <a href="/fedelissimi/50esimo">50° Anniversario</a>
+      </nav>
+
+      <div class="content-grid">
+        <div class="content-grid__text">
+          <h2>Chi siamo</h2>
+          <p>
+            I Fedelissimi sono un'associazione di volontariato nata con l'obiettivo di tenere vive le tradizioni locali
+            e promuovere lo spirito comunitario nel paese di Zugliano. Nel corso degli anni, l'associazione ha saputo
+            crescere e rinnovarsi, rimanendo fedele ai valori fondanti di solidarietà, partecipazione e amore per il territorio.
+          </p>
+          <p>
+            Grazie all'impegno dei soci e dei numerosi volontari, i Fedelissimi organizzano ogni anno eventi che
+            coinvolgono l'intera comunità: dalla sagra estiva R'Estate in Compagnia alla Festa Bavarese di ottobre,
+            passando per il torneo di Mondo Volley e molte altre iniziative durante l'anno.
+          </p>
+          <p>
+            [Aggiungere qui testo aggiuntivo sull'associazione, numero di soci, contatti, ecc.]
+          </p>
+
+          <div class="cta-group">
+            <a href="/fedelissimi/storia" class="btn btn--primary">La nostra storia</a>
+            <a href="/fedelissimi/50esimo" class="btn btn--outline">50° Anniversario</a>
+          </div>
+        </div>
+
+        <div class="content-grid__aside">
+          <div class="info-card">
+            <h3>In breve</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-list__icon">📅</span>
+                <span>Fondata nel <strong>[anno fondazione]</strong></span>
+              </li>
+              <li>
+                <span class="info-list__icon">👥</span>
+                <span><strong>[n°] soci</strong> attivi</span>
+              </li>
+              <li>
+                <span class="info-list__icon">📍</span>
+                <span>Zugliano, Pozzuolo del Friuli (UD)</span>
+              </li>
+              <li>
+                <span class="info-list__icon">✉️</span>
+                <span>[email placeholder]</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="placeholder-img" style="margin-top: 1.5rem;">
+            [Foto associazione placeholder]
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Le nostre iniziative</h2>
+        <p class="section-header__subtitle">Gli eventi che organizziamo ogni anno per la comunità.</p>
+      </div>
+      <div class="cards-grid">
+        <a href="/restate-in-compagnia" class="initiative-card">
+          <span class="initiative-card__icon">☀️</span>
+          <div>
+            <strong>R'Estate in Compagnia</strong>
+            <p>Sagra di luglio con cucina, musica e divertimento.</p>
+          </div>
+        </a>
+        <a href="/mondo-volley" class="initiative-card">
+          <span class="initiative-card__icon">🏐</span>
+          <div>
+            <strong>Mondo Volley</strong>
+            <p>Torneo di green volley in erba durante la sagra.</p>
+          </div>
+        </a>
+        <a href="/festa-bavarese" class="initiative-card">
+          <span class="initiative-card__icon">🍺</span>
+          <div>
+            <strong>Festa Bavarese</strong>
+            <p>Festa di ottobre con birra, gastronomia e musica.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .content-grid__text h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+
+  .info-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+
+  .initiative-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .initiative-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .initiative-card__icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .initiative-card strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-text);
+  }
+
+  .initiative-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
