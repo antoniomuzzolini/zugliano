@@ -74,6 +74,13 @@ import HeroSection from '../components/HeroSection.astro';
               <span class="info-list__icon">🌐</span>
               <span><a href="mailto:mondovolley@zugliano.com">mondovolley@zugliano.com</a></span>
             </li>
+            <li>
+              <span class="info-list__icon">📞</span>
+              <span>
+                Elisa — <a href="tel:+393441136201">344 113 6201</a><br />
+                Antonio — <a href="tel:+393297089218">329 708 9218</a>
+              </span>
+            </li>
           </ul>
         </aside>
       </div>
@@ -198,13 +205,21 @@ import HeroSection from '../components/HeroSection.astro';
         <div class="step">
           <div class="step__number">2</div>
           <div>
-            <h3>Compila il modulo online</h3>
+            <h3>Scarica e compila il modulo</h3>
             <p>
-              L'iscrizione avviene esclusivamente tramite il modulo online ufficiale disponibile su
-              <a href="mailto:mondovolley@zugliano.com">mondovolley@zugliano.com</a>.
+              Scarica il modulo di iscrizione ufficiale, compilalo e invialo insieme alla documentazione
+              richiesta a <a href="mailto:mondovolley@zugliano.com">mondovolley@zugliano.com</a>.
               Le iscrizioni vanno effettuate indicativamente entro 2 giorni prima del torneo
               (la data precisa verrà comunicata all'apertura delle iscrizioni).
             </p>
+            <a
+              href="https://drive.google.com/file/d/15aB4EL6Pd1TKwKNcx9JpOvQwWxA57jOn/view?usp=sharing"
+              class="btn btn--primary step__download"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Scarica il modulo di iscrizione (PDF)
+            </a>
           </div>
         </div>
         <div class="step">
@@ -234,7 +249,11 @@ import HeroSection from '../components/HeroSection.astro';
 
       <div class="contact-cta">
         <p>Per informazioni e iscrizioni:</p>
-        <a href="mailto:mondovolley@zugliano.com" class="btn btn--primary">mondovolley@zugliano.com</a>
+        <div class="contact-cta__links">
+          <a href="mailto:mondovolley@zugliano.com" class="btn btn--primary">mondovolley@zugliano.com</a>
+          <a href="tel:+393441136201" class="btn btn--outline">Elisa — 344 113 6201</a>
+          <a href="tel:+393297089218" class="btn btn--outline">Antonio — 329 708 9218</a>
+        </div>
       </div>
     </div>
   </section>
@@ -243,7 +262,7 @@ import HeroSection from '../components/HeroSection.astro';
     <div class="container">
       <div class="section-header">
         <h2>Come pagare la quota</h2>
-        <p class="section-header__subtitle">Scegli il metodo di pagamento che preferisci.</p>
+        <p class="section-header__subtitle">Effettua il bonifico con i dati indicati di seguito.</p>
       </div>
 
       <div class="payment-grid">
@@ -257,43 +276,36 @@ import HeroSection from '../components/HeroSection.astro';
             <dl class="iban-list">
               <div class="iban-row">
                 <dt>Intestatario</dt>
-                <dd><!-- NOME INTESTATARIO --></dd>
+                <dd>
+                  <button
+                    type="button"
+                    class="copyable"
+                    data-copy="Fedelissimi Zugliano - ODV"
+                    aria-label="Copia intestatario negli appunti"
+                  >
+                    Fedelissimi Zugliano - ODV
+                  </button>
+                </dd>
               </div>
               <div class="iban-row">
                 <dt>IBAN</dt>
-                <dd class="iban-code"><!-- IT00 X000 0000 0000 0000 0000 000 --></dd>
+                <dd>
+                  <button
+                    type="button"
+                    class="copyable copyable--iban"
+                    data-copy="IT60K0863163710000000326722"
+                    aria-label="Copia IBAN negli appunti"
+                  >
+                    IT60K0863163710000000326722
+                  </button>
+                </dd>
               </div>
               <div class="iban-row">
                 <dt>Causale</dt>
                 <dd>Iscrizione Mondo Volley 2026 – [Nome squadra]</dd>
               </div>
             </dl>
-          </div>
-        </div>
-
-        <div class="payment-card">
-          <div class="payment-card__header">
-            <img src="/images/paypal.png" alt="PayPal" class="payment-card__logo" />
-            <h3>PayPal</h3>
-          </div>
-          <div class="payment-card__body payment-card__body--centered">
-            <p class="payment-note">Paga in modo rapido e sicuro con il tuo account PayPal o carta di credito.</p>
-            <!-- Sostituire href con il link PayPal.me o il bottone generato da PayPal Business -->
-            <a href="#" class="btn btn--paypal" aria-label="Paga con PayPal">
-              Paga con PayPal
-            </a>
-          </div>
-        </div>
-
-        <div class="payment-card">
-          <div class="payment-card__header">
-            <img src="/images/satispay-icona.png" alt="Satispay" class="payment-card__logo" />
-            <h3>Satispay</h3>
-          </div>
-          <div class="payment-card__body payment-card__body--centered">
-            <p class="payment-note">Inquadra il QR code con l'app Satispay oppure cerca il profilo dell'organizzazione.</p>
-            <!-- Sostituire con il QR code generato da Satispay Business -->
-            <div class="qr-placeholder">QR Code Satispay</div>
+            <p class="payment-copy-hint">Clicca su intestatario o IBAN per copiarli negli appunti.</p>
           </div>
         </div>
 
@@ -317,6 +329,26 @@ import HeroSection from '../components/HeroSection.astro';
   </section> */}
 
 </Layout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copyable').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy ?? btn.textContent?.trim() ?? '';
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.classList.add('copyable--copied');
+        const previous = btn.textContent;
+        btn.textContent = 'Copiato!';
+        window.setTimeout(() => {
+          btn.textContent = previous;
+          btn.classList.remove('copyable--copied');
+        }, 1500);
+      } catch {
+        /* fallback silenzioso se clipboard non disponibile */
+      }
+    });
+  });
+</script>
 
 <style>
   .card--centered {
@@ -471,6 +503,11 @@ import HeroSection from '../components/HeroSection.astro';
     margin: 0;
   }
 
+  .step__download {
+    margin-top: 1rem;
+    display: inline-block;
+  }
+
   .contact-cta {
     display: flex;
     align-items: center;
@@ -483,6 +520,12 @@ import HeroSection from '../components/HeroSection.astro';
   .contact-cta p {
     margin: 0;
     color: var(--color-text-muted);
+  }
+
+  .contact-cta__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   @media (max-width: 900px) {
@@ -504,9 +547,7 @@ import HeroSection from '../components/HeroSection.astro';
 
   /* Payment section */
   .payment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    max-width: 520px;
     margin-top: 0.5rem;
   }
 
@@ -538,29 +579,8 @@ import HeroSection from '../components/HeroSection.astro';
     flex-shrink: 0;
   }
 
-  .payment-card__logo {
-    height: 28px;
-    width: auto;
-    flex-shrink: 0;
-    object-fit: contain;
-  }
-
   .payment-card__body {
     padding: 1.25rem;
-  }
-
-  .payment-card__body--centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .payment-note {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    margin: 0;
   }
 
   .iban-list {
@@ -586,45 +606,47 @@ import HeroSection from '../components/HeroSection.astro';
   .iban-row dd {
     font-size: 0.95rem;
     color: var(--color-text);
+    margin: 0;
   }
 
-  .iban-code {
+  .copyable {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    margin: 0;
+    border: 1px dashed var(--color-border);
+    border-radius: calc(var(--radius) * 0.75);
+    background: var(--color-bg);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+
+  .copyable--iban {
     font-family: monospace;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
     color: var(--color-primary-dark);
     font-weight: 700;
   }
 
-  .btn--paypal {
-    background: #0070ba;
-    color: #fff;
-    padding: 0.65rem 1.5rem;
-    border-radius: var(--radius);
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-block;
+  .copyable:hover {
+    border-color: var(--color-primary);
+    background: #fff;
   }
 
-  .btn--paypal:hover {
-    background: #005ea6;
-    color: #fff;
-    transform: translateY(-1px);
+  .copyable--copied {
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
   }
 
-  .qr-placeholder {
-    width: 160px;
-    height: 160px;
-    background: var(--color-bg);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .payment-copy-hint {
+    margin: 1rem 0 0;
+    font-size: 0.8rem;
     color: var(--color-text-muted);
-    font-size: 0.85rem;
     font-style: italic;
   }
 </style>
