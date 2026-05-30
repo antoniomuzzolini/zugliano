@@ -63,6 +63,10 @@ import HeroSection from '../components/HeroSection.astro';
               <span>Formula: <strong>3+3 Misto</strong><br/><em>almeno 3 ragazze e 3 ragazzi in campo</em></span>
             </li>
             <li>
+              <span class="info-list__icon">💶</span>
+              <span>Quota iscrizione: <strong>15 € a giocatore</strong><br/><em>assicurazione, pranzo e acqua inclusi</em></span>
+            </li>
+            <li>
               <span class="info-list__icon">👥</span>
               <span>Min. in campo: <strong>5 giocatori</strong></span>
             </li>
@@ -96,6 +100,11 @@ import HeroSection from '../components/HeroSection.astro';
 
       <div class="cards-grid cards-grid--centered">
         <div class="card card--centered">
+          <div class="card__icon">💶</div>
+          <h3 class="card__title">15 € a giocatore</h3>
+          <p class="card__body">La quota di iscrizione include assicurazione, pranzo e acqua.</p>
+        </div>
+        <div class="card card--centered">
           <div class="card__icon">🏐</div>
           <h3 class="card__title">Almeno 4 partite</h3>
           <p class="card__body">Ogni squadra è garantita di giocare almeno 4 partite, tra fase a gironi ed eliminazione diretta.</p>
@@ -103,7 +112,7 @@ import HeroSection from '../components/HeroSection.astro';
         <div class="card card--centered">
           <div class="card__icon">🍝</div>
           <h3 class="card__title">Pranzo incluso</h3>
-          <p class="card__body">La quota di iscrizione comprende pasta, panino e acqua per tutti i partecipanti.</p>
+          <p class="card__body">Pranzo e acqua per tutti i giocatori iscritti, inclusi nella quota.</p>
         </div>
         <div class="card card--centered">
           <div class="card__icon">🏆</div>
@@ -229,8 +238,7 @@ import HeroSection from '../components/HeroSection.astro';
             <p>
               L'iscrizione si considera confermata solo dopo la ricezione di:
               modulo compilato, ricevuta di pagamento e certificati medici dei giocatori.
-              La quota di iscrizione (comunicata all'apertura delle iscrizioni) include assicurazione,
-              pasta e panino e acqua.
+              La quota è di <strong>15 € a giocatore</strong> e include assicurazione, pranzo e acqua.
             </p>
           </div>
         </div>
@@ -262,7 +270,10 @@ import HeroSection from '../components/HeroSection.astro';
     <div class="container">
       <div class="section-header">
         <h2>Come pagare la quota</h2>
-        <p class="section-header__subtitle">Effettua il bonifico con i dati indicati di seguito.</p>
+        <p class="section-header__subtitle">
+          Quota di <strong>15 € a giocatore</strong> (assicurazione, pranzo e acqua inclusi).
+          Effettua il bonifico con i dati indicati di seguito.
+        </p>
       </div>
 
       <div class="payment-grid">
