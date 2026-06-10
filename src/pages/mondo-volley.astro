@@ -64,7 +64,7 @@ import HeroSection from '../components/HeroSection.astro';
             </li>
             <li>
               <span class="info-list__icon">💶</span>
-              <span>Quota iscrizione: <strong>15 € a giocatore</strong><br/><em>assicurazione, pranzo e acqua inclusi</em></span>
+              <span>Quota iscrizione: <strong>15 € a giocatore</strong><br/><em>pranzo e acqua inclusi</em></span>
             </li>
             <li>
               <span class="info-list__icon">👥</span>
@@ -102,7 +102,7 @@ import HeroSection from '../components/HeroSection.astro';
         <div class="card card--centered">
           <div class="card__icon">💶</div>
           <h3 class="card__title">15 € a giocatore</h3>
-          <p class="card__body">La quota di iscrizione include assicurazione, pranzo e acqua.</p>
+          <p class="card__body">La quota di iscrizione include pranzo e acqua.</p>
         </div>
         <div class="card card--centered">
           <div class="card__icon">🏐</div>
@@ -223,10 +223,9 @@ import HeroSection from '../components/HeroSection.astro';
               (la data precisa verrà comunicata all'apertura delle iscrizioni).
             </p>
             <a
-              href="https://drive.google.com/file/d/15aB4EL6Pd1TKwKNcx9JpOvQwWxA57jOn/view?usp=sharing"
+              href="/modulo-iscrizione-mondovolley-2026.pdf"
               class="btn btn--primary step__download"
-              target="_blank"
-              rel="noopener noreferrer"
+              download
             >
               Scarica il modulo di iscrizione (PDF)
             </a>
@@ -238,8 +237,8 @@ import HeroSection from '../components/HeroSection.astro';
             <h3>Invia la documentazione e paga la quota</h3>
             <p>
               L'iscrizione si considera confermata solo dopo la ricezione di:
-              modulo compilato, ricevuta di pagamento e certificati medici dei giocatori.
-              La quota è di <strong>15 € a giocatore</strong> e include assicurazione, pranzo e acqua.
+              <strong>modulo compilato, ricevuta di pagamento e certificati medici dei giocatori</strong>.
+              La quota è di <strong>15 € a giocatore</strong> e include pranzo e acqua.
             </p>
           </div>
         </div>
@@ -272,7 +271,7 @@ import HeroSection from '../components/HeroSection.astro';
       <div class="section-header">
         <h2>Come pagare la quota</h2>
         <p class="section-header__subtitle">
-          Quota di <strong>15 € a giocatore</strong> (assicurazione, pranzo e acqua inclusi).
+          Quota di <strong>15 € a giocatore</strong> (pranzo e acqua inclusi).
           Effettua il bonifico con i dati indicati di seguito.
         </p>
       </div>
@@ -321,6 +320,28 @@ import HeroSection from '../components/HeroSection.astro';
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="responsabilita">
+    <div class="container">
+      <div class="disclaimer-box">
+        <h3>Partecipazione e responsabilità</h3>
+        <p>
+          La partecipazione al torneo comporta l'assunzione della completa responsabilità sulla propria
+          idoneità fisica da parte di ciascun atleta (a cura dei genitori o di chi ne fa le veci per i minorenni)
+          e l'accettazione del presente regolamento.
+        </p>
+        <p>
+          L'Associazione Fedelissimi Zugliano <strong>non si assume responsabilità diretta</strong> per danni
+          a persone o cose causati da imperizia, distrazione o altro dei partecipanti al torneo o di terzi,
+          né per furti o altri fatti che dovessero verificarsi durante la manifestazione o al di fuori
+          dell'area sportiva.
+        </p>
+        <p>
+          Durante il torneo potranno essere realizzate fotografie e video a scopo promozionale.
+        </p>
       </div>
     </div>
   </section>
@@ -667,5 +688,36 @@ import HeroSection from '../components/HeroSection.astro';
     font-size: 0.8rem;
     color: var(--color-text-muted);
     font-style: italic;
+  }
+
+  /* Disclaimer */
+  .disclaimer-box {
+    max-width: 720px;
+    border-left: 4px solid var(--color-border);
+    padding: 1rem 1.5rem;
+    background: var(--color-surface);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: var(--shadow);
+  }
+
+  .disclaimer-box h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .disclaimer-box p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.6rem;
+    line-height: 1.6;
+  }
+
+  .disclaimer-box p:last-child {
+    margin-bottom: 0;
   }
 </style>
