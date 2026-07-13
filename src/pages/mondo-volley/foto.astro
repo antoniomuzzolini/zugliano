@@ -247,6 +247,8 @@ const edizioni = await Promise.all(
     max-width: 92vw;
     max-height: 92vh;
     overflow: visible;
+    /* il reset globale azzera il margin: auto con cui il browser centra i dialog */
+    margin: auto;
   }
 
   .lightbox::backdrop {
