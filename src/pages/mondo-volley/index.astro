@@ -1,15 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import { Image } from 'astro:assets';
+import { getFotoPerEdizione } from '../../utils/mondo-volley-foto';
+
+const ultimaEdizione = getFotoPerEdizione()[0];
+const fotoAnteprima = ultimaEdizione?.foto.slice(0, 4) ?? [];
 ---
 
 <Layout title="Mondo Volley" description="Mondo Volley – Edizione 2026: il torneo amatoriale di green volley in erba dell'11 luglio all'Area Sportiva di Zugliano.">
 
   <HeroSection
     title="Mondo Volley"
-    subtitle="Il torneo amatoriale di green volley in erba torna all'Area Sportiva di Zugliano. Sport, divertimento e spirito di squadra per tutti."
+    subtitle="L'edizione 2026 si è conclusa: grazie a tutte le squadre, ai volontari e al pubblico che hanno reso speciale questa giornata di sport e festa!"
     tag="Edizione 2026 · 11 Luglio"
-    cta={{ label: "Come iscriversi", href: "#iscrizioni" }}
+    cta={{ label: "📸 Guarda le foto", href: "/mondo-volley/foto" }}
     variant="primary"
   />
 
@@ -199,6 +204,11 @@ import HeroSection from '../components/HeroSection.astro';
         <p class="section-header__subtitle">Segui questi passaggi per portare la tua squadra in campo.</p>
       </div>
 
+      <p class="iscrizioni-chiuse">
+        Le iscrizioni per l'edizione 2026 sono chiuse: grazie a tutte le squadre che hanno partecipato!
+        Le informazioni qui sotto restano come riferimento in vista della prossima edizione.
+      </p>
+
       <div class="steps">
         <div class="step">
           <div class="step__number">1</div>
@@ -344,20 +354,31 @@ import HeroSection from '../components/HeroSection.astro';
     </div>
   </section>
 
-  {/* <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Galleria</h2>
-        <p class="section-header__subtitle">I momenti più belli delle edizioni passate.</p>
+  {fotoAnteprima.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Galleria</h2>
+          <p class="section-header__subtitle">I momenti più belli dell'edizione {ultimaEdizione.anno}.</p>
+        </div>
+        <div class="gallery">
+          {fotoAnteprima.map((img, i) => (
+            <a href="/mondo-volley/foto" class="teaser-item" aria-label="Vai alla galleria completa">
+              <Image
+                src={img}
+                width={640}
+                alt={`Mondo Volley ${ultimaEdizione.anno} – foto ${i + 1}`}
+                class="teaser-img"
+              />
+            </a>
+          ))}
+        </div>
+        <div class="teaser-cta">
+          <a href="/mondo-volley/foto" class="btn btn--primary">Guarda tutte le foto</a>
+        </div>
       </div>
-      <div class="gallery">
-        <div class="placeholder-img">[Foto partita 1]</div>
-        <div class="placeholder-img">[Foto partita 2]</div>
-        <div class="placeholder-img">[Foto premiazione]</div>
-        <div class="placeholder-img">[Foto squadre]</div>
-      </div>
-    </div>
-  </section> */}
+    </section>
+  )}
 
 </Layout>
 
@@ -557,6 +578,42 @@ import HeroSection from '../components/HeroSection.astro';
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  .iscrizioni-chiuse {
+    max-width: 720px;
+    margin-bottom: 2rem;
+    padding: 0.9rem 1.25rem;
+    background: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .teaser-item {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3;
+  }
+
+  .teaser-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s;
+  }
+
+  .teaser-item:hover .teaser-img {
+    transform: scale(1.04);
+  }
+
+  .teaser-cta {
+    margin-top: 1.5rem;
+    text-align: center;
   }
 
   .whatsapp-icon {
